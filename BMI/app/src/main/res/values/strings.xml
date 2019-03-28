@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">BMI</string>
+
+
+    <string name="underweight">Underweight</string>
+    <string name="normalWeight">Normal weight</string>
+    <string name="overweight">Overweight</string>
+    <string name="obese">Obese</string>
+    <string name="severelyObese">Severely obese</string>
+
+    <string name="underweightDesc">You should eat more, little fella</string>
+    <string name="normalWeightDesc">That\'s pretty good I guess</string>
+    <string name="overweightDesc">Skip McD for some time and you\'re gonna be fine</string>
+    <string name="obeseDesc">Woah, that\'s too much buddy</string>
+    <string name="severelyObeseDesc">WHAT\'S WRONG WITH YOU?!</string>
+
+
+    <string name="title_activity_about_me">AboutMeActivity</string>
+
+
+    <string name="change_units">Change units</string>
+    <string name="about_me">About me</string>
+    <string name="calculate">Calculate</string>
+
+    <string name="mass_kg">Mass [kg]</string>
+    <string name="mass_lb">Mass [lb]</string>
+    <string name="height_cm">Height [cm]</string>
+    <string name="height_in">Height [in]</string>
+    <string name="text_about_me">To jest przykładowy tekst dla linear layout, zaprezentowano tutaj fajne kolorki:
+        powyżej róż pompejanski, poniżej lapis lazuli, a na tle tego tekstu brynszpan. Można zauważyć że pola z kolorami mają
+        różne rozmiary, gdyż mają różne wagi.
+    </string>
+    <string name="info">Info</string>
+    <string name="your_bmi">Your BMI</string>
+    <string name="emptyError">This space cannot be empty</string>
+    <string name="noZeroError">This value cannot be zero</string>
+    <string name="your_bmi_is">Your BMI is </string>
+
+
+
+</resources>
