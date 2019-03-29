@@ -1,3 +1,17 @@
 <resources>
+    <dimen name="info_button_size">55dp</dimen>
+
     <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="bmi_text_top_margin">8dp</dimen>
+    <dimen name="bmi_text_bottom_margin">8dp</dimen>
+    <dimen name="bmi_text_side_margin">8dp</dimen>
+
+    <dimen name="bmi_button_side_margin">8dp</dimen>
+    <dimen name="bmi_bottom_button_bot_margin">16dp</dimen>
+
+    <dimen name="info_text_side_margin">0dp</dimen>
+    <dimen name="info_text_bottom_margin">0dp</dimen>
+    <dimen name="info_text_top_margin">0dp</dimen>
+
 </resources>

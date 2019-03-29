@@ -15,9 +15,10 @@ class InfoActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
-        val bmi=intent.extras!!.getString("bmi")
+        val bmi = intent.extras!!.getString("bmi")
         leftText.append(" $bmi")
-        val bmiVal = bmi.toString().replace(",",".").toDouble() //Kotlin przy zamianie double na string daje przecinek jako separator cz. dziesiętnych
+        val bmiVal = bmi.toString().replace(",", ".")
+            .toDouble() //Kotlin przy zamianie double na string daje przecinek jako separator cz. dziesiętnych
         when {
             bmiVal < 18.5 -> {
                 rightText.text = getString(R.string.underweightDesc)
@@ -37,7 +38,7 @@ class InfoActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp():Boolean {
+    override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
     }

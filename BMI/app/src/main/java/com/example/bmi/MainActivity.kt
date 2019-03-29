@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             countBmi()
         }
 
-        infoButton.setOnClickListener{
+        infoButton.setOnClickListener {
             val intent = Intent(this, InfoActivity::class.java)
             intent.putExtra("bmi", BMItext.text)
 
@@ -39,32 +39,32 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
-        inflater.inflate(R.menu.main_menu,menu)
+        inflater.inflate(R.menu.main_menu, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.UnitsToggle -> {
                 isMetric = !isMetric
                 massText.setText("")
                 heightText.setText("")
                 BMItext.text = ""
                 categoryText.text = ""
-                infoButton.isVisible=false
+                infoButton.isVisible = false
 
-                if(!isMetric){
+                if (!isMetric) {
                     massPrompt.setText(R.string.mass_lb)
                     heightPrompt.setText(R.string.height_in)
-                }else{
+                } else {
                     massPrompt.setText(R.string.mass_kg)
                     heightPrompt.setText(R.string.height_cm)
                 }
                 true
             }
             R.id.aboutMeButton -> {
-                val intent = Intent(this,AboutMeActivity::class.java)
+                val intent = Intent(this, AboutMeActivity::class.java)
                 startActivity(intent)
                 true
             }
@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onSaveInstanceState(outState: Bundle?) {
-        outState?.run{
+        outState?.run {
             putString("mass", massText.text.toString())
             putString("height", heightText.text.toString())
             putString("massPrompt", massPrompt.text.toString())
@@ -91,25 +91,25 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         massText.setText(savedInstanceState.getString("mass"))
         heightText.setText(savedInstanceState.getString("height"))
-        massPrompt.text=savedInstanceState.getString("massPrompt")
-        heightPrompt.text=savedInstanceState.getString("heightPrompt")
-        isMetric=savedInstanceState.getBoolean("isMetric")
+        massPrompt.text = savedInstanceState.getString("massPrompt")
+        heightPrompt.text = savedInstanceState.getString("heightPrompt")
+        isMetric = savedInstanceState.getBoolean("isMetric")
         BMItext.text = savedInstanceState.getString("bmi")
         BMItext.setTextColor(savedInstanceState.getInt("color"))
-        categoryText.text=savedInstanceState.getString("category")
-        infoButton.isVisible=savedInstanceState.getBoolean("infoButtonVisible")
+        categoryText.text = savedInstanceState.getString("category")
+        infoButton.isVisible = savedInstanceState.getBoolean("infoButtonVisible")
 
         super.onRestoreInstanceState(savedInstanceState)
     }
 
-    private fun countBmi(){
-        categoryText.text=""
-        BMItext.text=""
-        infoButton.isVisible=false
+    private fun countBmi() {
+        categoryText.text = ""
+        BMItext.text = ""
+        infoButton.isVisible = false
         var goodInput = false
         when {
             massText.text.isEmpty() -> massText.error = getString(R.string.emptyError)
-            massText.text.toString().toInt()==0 -> massText.error = getString(R.string.noZeroError)
+            massText.text.toString().toInt() == 0 -> massText.error = getString(R.string.noZeroError)
             else -> goodInput = true
         }
         when {
@@ -117,13 +117,13 @@ class MainActivity : AppCompatActivity() {
                 heightText.error = getString(R.string.emptyError)
                 goodInput = false
             }
-            heightText.text.toString().toInt()==0 -> {
+            heightText.text.toString().toInt() == 0 -> {
                 heightText.error = getString(R.string.noZeroError)
                 goodInput = false
             }
         }
 
-        if(goodInput) {
+        if (goodInput) {
 
             val bmi = if (isMetric) {
                 BmiForKgCm(massText.text.toString().toInt(), heightText.text.toString().toInt())
@@ -136,31 +136,31 @@ class MainActivity : AppCompatActivity() {
             BMItext.text = format.format(bmiVal)
 
             setDescAndColor(bmiVal)
-            infoButton.isVisible=true
+            infoButton.isVisible = true
         }
     }
 
-    private fun setDescAndColor(bmiVal: Double){
+    private fun setDescAndColor(bmiVal: Double) {
         when {
-            bmiVal<18.5 -> {
-                categoryText.text=getString(R.string.underweight)
-                BMItext.setTextColor(ContextCompat.getColor(applicationContext,R.color.lapisLazuli))
+            bmiVal < 18.5 -> {
+                categoryText.text = getString(R.string.underweight)
+                BMItext.setTextColor(ContextCompat.getColor(applicationContext, R.color.lapisLazuli))
             }
-            bmiVal<25.0 -> {
-                categoryText.text=getString(R.string.normalWeight)
-                BMItext.setTextColor(ContextCompat.getColor(applicationContext,R.color.grynszpan))
+            bmiVal < 25.0 -> {
+                categoryText.text = getString(R.string.normalWeight)
+                BMItext.setTextColor(ContextCompat.getColor(applicationContext, R.color.grynszpan))
             }
-            bmiVal<30.0 -> {
+            bmiVal < 30.0 -> {
                 categoryText.text = getString(R.string.overweight)
                 BMItext.setTextColor(ContextCompat.getColor(applicationContext, R.color.gold))
             }
-            bmiVal<35.0 ->{
+            bmiVal < 35.0 -> {
                 categoryText.text = getString(R.string.obese)
                 BMItext.setTextColor(ContextCompat.getColor(applicationContext, R.color.orange))
             }
             else -> {
-                categoryText.text=getString(R.string.severelyObese)
-                BMItext.setTextColor(ContextCompat.getColor(applicationContext,R.color.rozPompejanski))
+                categoryText.text = getString(R.string.severelyObese)
+                BMItext.setTextColor(ContextCompat.getColor(applicationContext, R.color.rozPompejanski))
             }
         }
 
