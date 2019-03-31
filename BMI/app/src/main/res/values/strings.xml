@@ -27,15 +27,20 @@
     <string name="height_cm">Height [cm]</string>
     <string name="height_in">Height [in]</string>
     <string name="text_about_me">To jest przykładowy tekst dla linear layout, zaprezentowano tutaj fajne kolorki:
-        powyżej róż pompejanski, poniżej lapis lazuli, a na tle tego tekstu brynszpan. Można zauważyć że pola z kolorami
+        powyżej róż pompejanski, poniżej lapis lazuli, a na tle tego tekstu grynszpan. Można zauważyć że pola z kolorami
         mają
         różne rozmiary, gdyż mają różne wagi.
     </string>
     <string name="info">Info</string>
-    <string name="your_bmi">Your BMI</string>
+    <string name="bmi">BMI</string>
     <string name="emptyError">This space cannot be empty</string>
     <string name="noZeroError">This value cannot be zero</string>
     <string name="your_bmi_is">Your BMI is</string>
+    <string name="history">History</string>
+    <string name="over999Error">Value cannot be greater than 999</string>
+    <string name="date">Date</string>
+    <string name="dateFormat">hh:mm:ss dd.MM.yyyy</string>
+    <string name="input">Input</string>
 
 
 </resources>

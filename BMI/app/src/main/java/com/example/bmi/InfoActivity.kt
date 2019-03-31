@@ -1,8 +1,8 @@
 package com.example.bmi
 
 import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_info.*
 
 class InfoActivity : AppCompatActivity() {
@@ -15,7 +15,7 @@ class InfoActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
-        val bmi = intent.extras!!.getString("bmi")
+        val bmi = intent.extras!!.getString(MainActivity.bmiTextKey)
         leftText.append(" $bmi")
         val bmiVal = bmi.toString().replace(",", ".")
             .toDouble() //Kotlin przy zamianie double na string daje przecinek jako separator cz. dziesiętnych

@@ -13,5 +13,8 @@
     <dimen name="info_text_side_margin">0dp</dimen>
     <dimen name="info_text_bottom_margin">0dp</dimen>
     <dimen name="info_text_top_margin">0dp</dimen>
+    <dimen name="bmi_recycler_margin">8dp</dimen>
+    <dimen name="bmi_recycler_margin_top">8dp</dimen>
+    <dimen name="history_row_bot_padding">8dp</dimen>
 
 </resources>
