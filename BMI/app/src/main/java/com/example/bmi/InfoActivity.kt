@@ -16,24 +16,28 @@ class InfoActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayShowHomeEnabled(true)
 
         val bmi = intent.extras!!.getString(MainActivity.bmiTextKey)
-        leftText.append(" $bmi")
-        val bmiVal = bmi.toString().replace(",", ".")
+        bmiInfoValText.append(" $bmi")
+        val bmiVal = bmi!!.toString().replace(",", ".")
             .toDouble() //Kotlin przy zamianie double na string daje przecinek jako separator cz. dziesiętnych
+        setBmiDesc(bmiVal)
+    }
+
+    private fun setBmiDesc(bmiVal: Double){
         when {
             bmiVal < 18.5 -> {
-                rightText.text = getString(R.string.underweightDesc)
+                bmiInfoDescText.text = getString(R.string.underweightDesc)
             }
             bmiVal < 25.0 -> {
-                rightText.text = getString(R.string.normalWeightDesc)
+                bmiInfoDescText.text = getString(R.string.normalWeightDesc)
             }
             bmiVal < 30.0 -> {
-                rightText.text = getString(R.string.overweightDesc)
+                bmiInfoDescText.text = getString(R.string.overweightDesc)
             }
             bmiVal < 35.0 -> {
-                rightText.text = getString(R.string.obeseDesc)
+                bmiInfoDescText.text = getString(R.string.obeseDesc)
             }
             else -> {
-                rightText.text = getString(R.string.severelyObeseDesc)
+                bmiInfoDescText.text = getString(R.string.severelyObeseDesc)
             }
         }
     }

@@ -23,7 +23,7 @@
         <ImageView
                 android:layout_width="match_parent"
                 app:srcCompat="@color/rozPompejanski"
-                android:id="@+id/imageView4" android:layout_weight="3" android:layout_height="wrap_content"/>
+                android:id="@+id/topColor" android:layout_weight="3" android:layout_height="wrap_content"/>
         <TextView
                 android:text="@string/text_about_me"
                 android:background="@color/grynszpan"
@@ -31,10 +31,10 @@
                 android:id="@+id/textView" android:layout_weight="4"
                 android:textSize="20sp"
                 android:textAllCaps="false" android:textAlignment="center" android:layout_height="wrap_content"
-                android:visibility="visible"/>
+                android:visibility="visible" android:fontFamily="sans-serif-light"/>
         <ImageView
                 android:layout_width="match_parent"
-                app:srcCompat="@color/lapisLazuli" android:id="@+id/imageView2"
+                app:srcCompat="@color/lapisLazuli" android:id="@+id/bottomColor"
                 android:layout_weight="10" android:layout_height="wrap_content"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

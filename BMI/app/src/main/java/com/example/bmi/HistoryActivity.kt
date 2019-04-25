@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bmi.logic.HistoryEntry
@@ -64,6 +66,8 @@ class HistoryActivity : AppCompatActivity() {
             holder.heightText?.append(": ${entry.height}")
             holder.massText?.append(": ${entry.mass}")
             holder.dateText?.text = getDateTimeInstance().format(entry.date)
+
+            if(position % 2 == 0) holder.changeBackgroundColor()
         }
 
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -77,6 +81,10 @@ class HistoryActivity : AppCompatActivity() {
                 heightText = itemView.findViewById(R.id.heightHistoryEntry)
                 massText = itemView.findViewById(R.id.massHistoryEntry)
                 dateText = itemView.findViewById(R.id.dateHistoryEntry)
+            }
+
+            fun changeBackgroundColor(){
+                itemView.setBackgroundResource(R.color.greyBlue)
             }
         }
     }
