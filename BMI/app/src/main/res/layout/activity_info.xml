@@ -13,10 +13,10 @@
 
         <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="300dp" app:srcCompat="@drawable/yobama"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/yobama"
                 android:layout_alignParentStart="true" android:layout_marginStart="0dp"
                 android:id="@+id/imageView" android:layout_marginTop="0dp"
-                android:scaleType="fitXY" android:layout_alignParentTop="true"/>
+                android:scaleType="centerInside" android:layout_alignParentTop="true" android:adjustViewBounds="true"/>
         <View android:id="@+id/strut"
               android:layout_width="0dp"
               android:layout_height="0dp"
